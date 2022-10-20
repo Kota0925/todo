@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}ToDo一覧{% endblock %}
+
+{% block content %}
+    <div>
+        <a href={% url 'todo-create' %}>ToDo作成</a>
+    </div>
+    <div>
+        {% if objectList %}
+        <ul>
+            {% for object in objectList %}
+            <li>{{ object.title }}：<a href={% url 'todo-detail' object.pk %}>詳細</a></li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <div>まだToDoがありません。作成してだくさい。</div>
+        {% endif %}
+    </div>
+{% endblock %}

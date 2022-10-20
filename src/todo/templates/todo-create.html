@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}ToDo作成{% endblock %}
+
+{% block content %}
+    <form method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" name="done">作成</button>
+        <a href={% url 'todo-list'%}>キャンセル</a>
+    </form>
+{% endblock %}

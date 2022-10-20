@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}ToDo詳細{% endblock %}
+
+{% block content %}
+    <div>タイトル：{{ object.title }}</div>
+    <div>内容：{{ object.content }}</div>
+    <div>
+        <a href={% url 'todo-update' object.pk %}>編集</a>
+        <a href={% url 'todo-delete' object.pk %}>削除</a>
+        <a href={% url 'todo-list' %}>一覧に戻る</a>
+    </div>
+{% endblock %}

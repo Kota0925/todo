@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}ToDo削除{% endblock %}
+
+{% block content %}
+    <div>タイトル：{{ object.title }}</div>
+    <div>内容：{{ object.content }}</div>
+    <div>
+        本当に削除しますか？
+    </div>
+    <form method="post">{% csrf_token %}
+        <button type="submit" name="done">削除</button>
+        <button type="submit" name="cancel">キャンセル</button>
+    </form>
+{% endblock %}
